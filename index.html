@@ -3,38 +3,75 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mana spēle</title>
+<title>Dinazauru mednieki</title>
 <style>
+/* Pamata izkārtojums — šīs rindas nemaini */
 body { font-family: Arial, sans-serif; max-width: 680px; margin: 24px auto; padding: 16px; line-height: 1.6; }
-button, input { font: inherit; padding: 10px; margin: 4px; }
-button { cursor: pointer; }
-img { max-width: 100%; height: auto; }
+button, input { font: inherit; padding: 10px 16px; margin: 6px 0; cursor: pointer; }
+img, audio { max-width: 100%; }
 [hidden] { display: none !important; }
 
+/* NOFORMĒ ŠEIT: pielieto 2.1. un 2.2. nodarbībā apgūto CSS */
+body {
+  background-color: #169ddb;
+  color: #110606;
+}
+
+h1 {
+  color: #010202;
+}
+
+.noteikumi {
+  background-color: #169ddbcb;
+  color: #0e161a;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.laukums {
+  width: 360px;
+  padding: 20px;
+  border: 2px solid #169ddbcb;
+  background-color: #169ddbcb;
+  border-radius: 12px;
+  max-width: 100%;
+
+  box-sizing: border-box;
+  margin: 20px auto;
+}
+
+button {
+  background-color: #3a9124;
+  color: #050303;
+  border-radius: 8px;
+  ;
+  border: 0;
+}
 </style>
 </head>
 <body>
-<h1>Mana spēle</h1>
-<p>Savāc piecas zvaigznes.</p>
-<section id="sakums">
-  <h2>Sākuma ekrāns</h2>
-  <button onclick="paraditSpeli()">Sākt spēli</button>
+<h1>Dinazauru mednieki</h1>
+<p>Sadraudzēties ar 21 dinazauru</p>
+<section class="noteikumi">
+  <h2>Noteikumi</h2>
+  <p>Ar dinazauru sadraudzējas kad viņam piespieš 1 reizi</p>
+  <p>Spēlētājs noklausas skaņu kad sadraudzējas ar 21 dinazauru</p>
 </section>
-<section id="laukums" hidden>
-  <h2>Spēles ekrāns</h2>
-  <p>Punkti: 0</p>
-  <p>Šeit vēlāk būs spēlētājs.</p>
-  <button onclick="paraditSakumu()">Atpakaļ</button>
-</section>
+<div class="laukums">
+  <h2>Spēles laukums</h2>
+  <img src="ateli/visi 3 varoņi.png" alt="visi 3 varoņi" width="128">
+  <p>Skaņas efekta nozīme spēlē:</p>
+  <p>Uzvara</p>
+  <audio controls src="skanas/klikskis.wav"></audio>
+  <p id="punkti">Punkti: 0</p>
+  <button onclick="savakt()">Savākt punktu</button>
+</div>
 <script>
-// Gatavā palīdzība pogām. Šodien maini lapas tekstu un izvietojumu.
-function paraditSpeli() {
-  document.getElementById("sakums").hidden = true;
-  document.getElementById("laukums").hidden = false;
-}
-function paraditSakumu() {
-  document.getElementById("sakums").hidden = false;
-  document.getElementById("laukums").hidden = true;
+// Gatava punktu poga — šo skriptu nemaini.
+let punkti = 0;
+function savakt() {
+  punkti = punkti + 1;
+  document.getElementById("punkti").textContent = "Punkti: " + punkti;
 }
 </script>
 </body>
