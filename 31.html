@@ -16,23 +16,23 @@ img { max-width: 100%; height: auto; }
 </style>
 </head>
 <body>
-<h1 id="nosaukums">Mana spēle</h1>
-<p id="apraksts">Spēles mērķa apraksts.</p>
+<h1 id="nosaukums">Dinazauru mednieki</h1>
+<p id="apraksts">Sadraudzējies ar 21 vai vairāk dinazauriem.</p>
 <div class="panelis">
-  <p id="punkti">Punkti: 0</p>
-  <p id="dzivibas">Dzīvības: 0</p>
+  <p id="punkti">Punkti: 21</p>
+  <p id="dzivibas">Dzīvības: 3</p>
   <!-- 3. UZDEVUMS: šeit zemāk pievieno jaunu <p id="merkis"> rindkopu -->
 </div>
 <script>
 // === 1. UZDEVUMS — MAINI ŠEIT: spēles sākuma dati ===
-const nosaukums = "Zvaigžņu mednieks";
-const apraksts = "Savāc enerģijas kristālus un nosargā dzīvības.";
-let punkti = 0;
+const nosaukums = "Dinazauru mednieki";
+const apraksts = "Sadraudzējies ar 21 vai vairāk dinazauriem.";
+let punkti = 21;
 let dzivibas = 3;
 
 // === 2. UZDEVUMS — RAKSTI ŠEIT: punktu un dzīvību aprēķini ===
-
-
+punkti = punkti + 7;
+dzivibas = dzivibas - 1;
 // === GATAVĀ PARĀDĪŠANAS DAĻA (3. uzdevumā papildini ar mērķa rindu) ===
 document.getElementById("nosaukums").textContent = nosaukums;
 document.getElementById("apraksts").textContent = apraksts;
